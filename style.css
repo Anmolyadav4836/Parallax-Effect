@@ -1,98 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", serif;
+    font-family: "Poppins", sans-serif;
 }
 
-.wrapper{
-    height: 100vh;
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    line-height: 1.6;
+}
+
+.wrapper {
     overflow-x: hidden;
     overflow-y: auto;
     perspective: 10px;
+    height: 100vh;
 }
 
-.container{
+.container {
     position: relative;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-style: preserve-3d;
-    z-index: 0;
-}
-
-.background , .foreground{
-    position: absolute;
     height: 100vh;
-    width: 100vw;
-    object-fit: cover;
+    transform-style: preserve-3d;
     z-index: -1;
 }
 
-.background{
-    transform: translateZ(-50px) scale(6);
-}
-.foreground{
-    transform: translateZ(-20px) scale(3);
-}
-
-.container h1{
+.background, .foreground {
     position: absolute;
-    top: 5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    letter-spacing: 4px;
-    font-size:9rem ;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-section{
-    background-color: rgb(45,45,45);
-    color: white;
-    padding: 5rem 0;
-    position: relative;
-    z-index: 1;
-}
-.secHeading{
-    font-size: 5rem;
-    padding: 0 10rem;
+.background {
+    transform: translateZ(-10px) scale(2);
 }
 
-.text{
-    font-size: 1.5rem;
-    padding: 0 10rem;
-    margin: 5rem 0;
+.foreground {
+    transform: translateZ(-5px) scale(1.5);
 }
-.bg{
-    position: relative;
-    width: 100vw;
-    background-attachment: fixed;
-    height: 350px;
-    background-size: cover;
-    background-position: center;
 
-}
-.desc{
+h1 {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #fff;
-    color: black;
-    padding: 10px 25px;
+    font-size: 7rem;
+    color: white;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+section {
+    padding: 5rem 10%;
+    background: white;
+}
+
+.secHeading {
+    text-align: center;
     font-size: 3rem;
-    font-family: "Poppins", serif;
-    font-weight: 600;
+    margin-bottom: 2rem;
 }
-.bg1{
-    background-image: url(img/sport-1.jpg);
+
+.text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: justify;
 }
-.bg2{
-    background-image: url(img/sport-2.jpg);
+
+.bg {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.bg3{
-    background-image: url(img/sport-3.jpg);
+
+.bg1 {
+    background-image: url("img/biking.jpg");
 }
+.bg2 {
+    background-image: url("img/paragliding.jpg");
+}
+.bg3 {
+    background-image: url("img/surfing.jpg");
+}
+
+.desc {
+    font-size: 3rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 5rem;
+    }
+
+    .secHeading {
+        font-size: 2.5rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .desc {
+        font-size: 2rem;
+    }
+
+    .bg {
+        background-attachment: scroll;
+    }
+}
+
